@@ -411,7 +411,7 @@ class RegularisedLandmarkMeanShift(GradientDescentCLMAlgorithm):
                     patch_responses /= np.sum(patch_responses,
                                        axis=(-2, -1))[..., None, None]
                 except:
-                    print image.path.name
+                    print(image.path.name)
                     print('Normalize fail.')
 
                 mvnList = [multivariate_normal(mean=np.zeros(2), cov=2.0*rho2/(kernel_covariance[2*i] + kernel_covariance[2*i+1])) for i in range(patch_responses.shape[0])]
